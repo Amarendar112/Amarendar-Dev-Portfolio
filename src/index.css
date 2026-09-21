@@ -461,6 +461,218 @@ img {
   color: var(--accent);
 }
 
+/* ── Featured Split Card ───────────────────────────── */
+.featured-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  margin-top: 48px;
+  margin-bottom: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-height: 380px;
+  position: relative;
+}
+
+.featured-card.is-hovered {
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+
+/* LEFT – image panel */
+.featured-card__left {
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+}
+
+.featured-card__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+}
+
+.featured-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.featured-card__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent 60%,
+    var(--bg-card) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating "View Design" badge on the image */
+.featured-card__design-badge {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.featured-card__design-badge:hover {
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
+}
+
+/* RIGHT – case study info panel */
+.featured-card__right {
+  display: flex;
+  align-items: center;
+  padding: 40px 40px;
+}
+
+.featured-card__right-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.featured-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.featured-card__badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(124,106,255,0.2), rgba(0,212,170,0.2));
+  border: 1px solid rgba(124,106,255,0.35);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.featured-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.featured-card__desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Stats row */
+.featured-card__highlights {
+  display: flex;
+  gap: 24px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.featured-card__highlight-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.featured-card__highlight-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.featured-card__highlight-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* CTA Button */
+.featured-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), #5a4ecc);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  width: fit-content;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(124,106,255,0.35);
+  font-family: var(--font-body);
+}
+
+.featured-card__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(124,106,255,0.5);
+  background: linear-gradient(135deg, #9080ff, var(--accent));
+}
+
+/* Responsive – stack on smaller screens */
+@media (max-width: 768px) {
+  .featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-card__left {
+    min-height: 240px;
+  }
+
+  .featured-card__image-wrap {
+    min-height: 240px;
+  }
+
+  .featured-card__image-overlay {
+    background: linear-gradient(
+      to bottom,
+      transparent 60%,
+      var(--bg-card) 100%
+    );
+  }
+
+  .featured-card__right {
+    padding: 28px 24px;
+  }
+}
 
 /* ── Experience Section ────────────────────────────── */
 .experience-grid {
