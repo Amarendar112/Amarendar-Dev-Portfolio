@@ -91,7 +91,7 @@ const IntroVideo = () => {
       style={{
         width: '100%',
         background: 'var(--bg, #080808)',
-        padding: '60px 20px 80px',
+        padding: isMobile ? '32px 16px 36px' : '60px 20px 80px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

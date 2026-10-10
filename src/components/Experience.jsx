@@ -10,18 +10,6 @@ const experiences = [
     description: 'Designing end-to-end digital experiences for clients across e-commerce, healthcare, food delivery, and interior design. My focus is on turning complex requirements into clean, intuitive interfaces that drive real business results.'
   },
   {
-    id: 'exp-2',
-    logo: (
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'rgba(255,255,255,0.9)' }}>
-        <div style={{ width: '14px', height: '14px', background: 'linear-gradient(135deg, var(--accent-3), var(--accent))', borderRadius: '4px' }}></div>
-        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '18px', letterSpacing: '-0.3px' }}>Digital Yelender</span>
-      </div>
-    ),
-    date: '2022 – 2023',
-    role: 'Web Designer',
-    description: 'Built and designed a full-featured clothing brand website. Developed a keen eye for conversion-focused layouts, clear visual hierarchy, and impactful brand storytelling across digital touchpoints.'
-  },
-  {
     id: 'exp-3',
     logo: (
       <div style={{ display: 'flex', alignItems: 'center', color: 'rgba(255,255,255,0.9)', border: '1px solid rgba(255,255,255,0.3)', padding: '2px 8px', borderRadius: '4px' }}>
@@ -55,7 +43,7 @@ const Experience = () => {
           Experience
         </div>
         <h2 className="section-title" style={{ marginBottom: '20px' }}>Designed for a smooth journey</h2>
-        <p className="section-subtitle" style={{ maxWidth: '800px', margin: '0 auto clamp(40px, 8vh, 80px)', color: 'var(--text-secondary)' }}>
+        <p className="section-subtitle" style={{ maxWidth: '800px', margin: isMobile ? '0 auto 24px' : '0 auto clamp(30px, 5vh, 50px)', color: 'var(--text-secondary)' }}>
           From idea to execution, every project is a story of problem-solving, creativity, and craft. I've spent years bridging the gap between user needs and business goals, defining clear interaction patterns, and <strong style={{ color: "white" }}>turning complex requirements into clean interfaces.</strong>
         </p>
 
@@ -65,8 +53,8 @@ const Experience = () => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            padding: '24px 20px 140px',
-            marginTop: '20px',
+            padding: '16px 12px 40px',
+            marginTop: '10px',
             transformStyle: 'preserve-3d',
          } : { 
             position: 'relative', 
@@ -83,19 +71,18 @@ const Experience = () => {
             const cardWidth = isSmallMobile ? 280 : 320;
             const cardHeight = isSmallMobile ? 320 : 360;
 
-            // Symmetrical offsets for exactly 3 cards
+            // Symmetrical offsets for cards
             const desktopStyles = [
-              { rotation: -5, xOff: -200, yOff: 20  },  // Left fanned
-              { rotation:  0, xOff: 0,    yOff: 0   },  // Middle fanned
-              { rotation:  5, xOff: 200,  yOff: 20  },  // Right fanned
+              { rotation: -4, xOff: -180, yOff: 10 },
+              { rotation:  4, xOff:  180, yOff: 10 },
             ];
 
-            const mobileRotations = [4.5, -3, 3.5];
-            const rotation = isMobile ? mobileRotations[i] : desktopStyles[i].rotation;
-            const xOff = isMobile ? 0 : desktopStyles[i].xOff;
-            const yOff = isMobile ? 0 : desktopStyles[i].yOff;
+            const mobileRotations = [-3, 3.5];
+            const rotation = isMobile ? (mobileRotations[i] || 0) : (desktopStyles[i]?.rotation || 0);
+            const xOff = isMobile ? 0 : (desktopStyles[i]?.xOff || 0);
+            const yOff = isMobile ? 0 : (desktopStyles[i]?.yOff || 0);
 
-            const defaultZIndex = isMobile ? (experiences.length - i) : (50 - Math.abs(i - 1) * 10);
+            const defaultZIndex = isMobile ? (experiences.length - i) : (50 - i * 10);
 
             // Calculate dynamic mobile Y-translation to spread cards apart when hovered/active
             let mobileY = 0;

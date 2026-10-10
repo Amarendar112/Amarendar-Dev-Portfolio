@@ -1,8 +1,9 @@
-import { Home, FolderOpen, Briefcase, Camera, Zap, FileText, Mail, Award } from 'lucide-react';
+import { Home, Code2, FolderOpen, Briefcase, Camera, Zap, Mail, Award } from 'lucide-react';
 
 const Navbar = () => {
   const links = [
     { icon: Home, label: 'Home', href: '#hero' },
+    { icon: Code2, label: 'Services', href: '#services' },
     { icon: FolderOpen, label: 'Projects', href: '#projects' },
     { icon: Briefcase, label: 'Experience', href: '#experience' },
     { icon: Award, label: 'Certifications', href: '#certifications' },
@@ -14,14 +15,16 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__brand">
-        <div className="navbar__brand-icon">JA</div>
+        <div className="navbar__brand-icon">
+          <img src="/logo.png" alt="Amar" className="navbar__logo-img" />
+        </div>
         <span>Amar</span>
       </div>
       <div className="navbar__links">
         {links.map(({ icon: Icon, label, href, target }) => (
           <a
             key={label}
-            id={`nav-${label.toLowerCase()}`}
+            id={`nav-${label.toLowerCase().replace(/\s+/g, '-')}`}
             href={href}
             target={target}
             rel={target ? 'noopener noreferrer' : undefined}
@@ -33,17 +36,6 @@ const Navbar = () => {
           </a>
         ))}
       </div>
-      <a
-        id="nav-resume"
-        href="/uiuxresume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="navbar__resume"
-        aria-label="Resume"
-      >
-        <FileText size={17} strokeWidth={1.8} />
-        <span className="tooltip">Resume</span>
-      </a>
     </nav>
   );
 };

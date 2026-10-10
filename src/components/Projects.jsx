@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, ArrowUpRight, Layers } from 'lucide-react';
+import startupMapImg from '../assets/hyderabad-startups-map-preview.png';
 import trenzlyImg from '../assets/trenzly-preview.webp';
 import joeSeraImg from '../assets/joe-sera-preview.webp';
 import zomatoImg from '../assets/zomato-redesign-preview.webp';
@@ -10,15 +11,16 @@ import dengueImg from '../assets/dengue-detection-preview.webp';
 
 const projects = [
   {
-    id: 'trenzly',
-    title: 'Trenzly',
+    id: 'hyderabad-startups-map',
+    title: 'Hyderabad Startup Map',
     description:
-      'A modern, fast, and customer-friendly e-commerce experience. Delivered a clean interface that boosted engagement and drove measurable sales growth for the client.',
-    link: 'https://digitalyelender.com/',
+      'An interactive ecosystem platform mapping 460+ startups across Hyderabad with area filtering, sector clustering, stage classifications, and active job openings.',
+    link: 'https://hyderabadstartupsmap.com/',
     linkLabel: 'View Website',
-    image: trenzlyImg,
-    tag: 'E-Commerce',
+    image: startupMapImg,
+    tag: 'Web App',
   },
+
   {
     id: 'joe-sera',
     title: 'Joe & Sera | Interior Design Studio',

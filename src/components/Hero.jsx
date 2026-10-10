@@ -140,7 +140,8 @@ const ScatteredCardsSection = () => {
         background: '#000',
         position: 'relative',
         zIndex: 5,
-        padding: isMobile ? '30px 0 60px' : '80px 0 160px'
+        padding: isMobile ? '20px 0 24px' : '80px 0 160px',
+        overflow: 'hidden'
       }}
     >
       <div style={{
@@ -156,22 +157,19 @@ const ScatteredCardsSection = () => {
           initial={{ opacity: 0, x: isMobile ? 0 : -40, y: isMobile ? 20 : 0 }}
           animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-          style={{ flex: '1 1 320px', maxWidth: isMobile ? '100%' : '480px' }}
+          style={{ flex: '1 1 320px', maxWidth: isMobile ? '100%' : '500px' }}
         >
           <p style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: 'clamp(15px, 1.6vw, 18px)',
             lineHeight: 1.85,
-            color: 'rgba(255,255,255,0.55)',
+            color: 'rgba(255,255,255,0.6)',
             margin: 0,
           }}>
-            Designing for real people and real impact. I've spent years
-            bridging the gap between user needs and business goals, crafting
-            digital experiences that feel intuitive and look stunning. Whether
-            working on a startup's first product or refining complex
-            design systems, my mission remains the same:{' '}
-            <strong style={{ color: 'rgba(255,255,255,0.92)', fontWeight: 600 }}>
-              removing friction from every interaction that matters.
+            I design and build modern websites and web applications. 
+            From interactive UI/UX prototypes to clean, scalable full-stack code, my mission is{' '}
+            <strong style={{ color: 'rgba(255,255,255,0.95)', fontWeight: 600 }}>
+              crafting seamless digital products that look exceptional and deliver real impact.
             </strong>
           </p>
         </motion.div>
@@ -210,7 +208,7 @@ const ScatteredCardsSection = () => {
 const Hero = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [revealed, setRevealed] = useState(false);
-  const [role, setRole] = useState("UI / UX Designer");
+  const [role, setRole] = useState("Full Stack Developer");
   const [cursorVisible, setCursorVisible] = useState(true);
   const { x, y } = useMousePosition();
   const containerRef = useRef(null);
@@ -304,7 +302,7 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    const roles = ["UI / UX Designer", "Frontend developer", "Product Designer"];
+    const roles = ["Full Stack Developer", "UI / UX Designer", "Product Designer"];
     let i = 0;
     const interval = setInterval(() => {
       i = (i + 1) % roles.length;

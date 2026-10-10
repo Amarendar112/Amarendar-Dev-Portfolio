@@ -5,24 +5,24 @@ import { Minus, Plus } from 'lucide-react';
 const chatFaqs = [
   {
     id: 'faq-1',
-    q: 'Can design really change how people use technology?',
-    a: "Absolutely. I focus on creating interfaces that feel simple, intuitive, and visually engaging. Good UX removes confusion and improves user experience naturally.",
-    emoji: { icon: '💖', top: '-10px', right: '40px', delay: 0 },
+    q: 'Can you handle both the UI/UX design and the complete website/app development?',
+    a: "Yes, exactly! As a Full Stack Developer and UI/UX Designer, I handle the entire lifecycle: from wireframes and Figma designs to complete responsive frontend, backend APIs, database integration, and live cloud deployment.",
+    emoji: { icon: '🚀', top: '-10px', right: '40px', delay: 0 },
   },
   {
     id: 'faq-2',
-    q: "What kind of products do you design?",
-    a: "I enjoy designing AI-driven healthcare projects, mobile apps, and modern web experiences with strong visual storytelling and smooth interactions.",
+    q: "What types of websites and applications do you build for clients?",
+    a: "I build responsive corporate websites, high-converting landing pages, e-commerce stores, custom SaaS dashboards, and full-stack web and mobile apps with AI-powered features.",
   },
   {
     id: 'faq-3',
-    q: 'What makes your work different?',
-    a: "I combine UI/UX design with technical understanding in Python Full Stack and AI systems, which helps me create designs that are both creative and practical.",
+    q: 'How does your client workflow and project delivery work?',
+    a: "We start with a discovery chat to understand your requirements, deliver interactive Figma prototypes, and then build with weekly milestone demos so you have complete visibility before launch.",
   },
   {
     id: 'faq-4',
-    q: 'Why combine design with technical skills?',
-    a: "Because understanding both design and development helps me build realistic, scalable, and developer-friendly product experiences.",
+    q: 'Do you provide maintenance and post-launch support?',
+    a: "Yes. Every client project includes post-launch support, bug warranty, and full documentation so you have complete peace of mind and 100% ownership of your code and design assets.",
     emoji: { icon: '⭐', top: '50%', left: '-18px', transform: 'translateY(-50%)', delay: 0 }
   },
 ];
@@ -78,7 +78,7 @@ const Connect = () => {
       <div className="container" style={{ textAlign: 'center' }}>
         <h2 className="connect-title">Start a Conversation</h2>
         <p className="connect-subtitle">
-          No gatekeepers here just open channels. Whether you want to discuss the future of Agentic AI, book a career strategy session, or simply critique my latest playlist, I'm always up for a chat.
+          Have a website or application project in mind? Reach out directly via WhatsApp, email, or LinkedIn. I typically respond within 2 hours with ideas, timeline estimates, and next steps.
         </p>
 
         <div className="connect-action-btns">

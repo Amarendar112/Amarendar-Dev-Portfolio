@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import CustomCursor from './components/CustomCursor';
 
 // Lazy-load heavy sections — they load only when needed
+const Services      = lazy(() => import('./components/Services'));
 const Projects      = lazy(() => import('./components/Projects'));
 const Experience    = lazy(() => import('./components/Experience'));
 const Certifications = lazy(() => import('./components/Certifications'));
@@ -22,6 +23,10 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <div className="gradient-line" />
+        <Suspense fallback={<Fallback />}>
+          <Services />
+        </Suspense>
         <div className="gradient-line" />
         <Suspense fallback={<Fallback />}>
           <Projects />
