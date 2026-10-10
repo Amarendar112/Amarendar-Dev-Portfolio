@@ -166,8 +166,10 @@ const IntroVideo = () => {
             rotateX: tiltX, rotateY: tiltY,
           }}>
             <img
-              src="/phone_mockup_clean.png"
+              src="/phone_mockup_clean.webp"
               alt="Phone Mockup"
+              loading="lazy"
+              decoding="async"
               style={{ width: '100%', height: 'auto', display: 'block', pointerEvents: 'none' }}
             />
 
@@ -187,12 +189,12 @@ const IntroVideo = () => {
             >
               <video
                 ref={videoRef}
-                src="/intro_video.mp4"
+                src={inView ? "/intro_video.mp4" : undefined}
                 loop
                 muted
                 controls={false}
                 playsInline
-                preload="auto"
+                preload="none"
                 controlsList="nodownload nofullscreen noremoteplayback"
                 disablePictureInPicture
                 x-webkit-airplay="deny"

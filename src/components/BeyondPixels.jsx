@@ -74,7 +74,7 @@ const SpotifyCard = ({ track, artist, albumColor, rotation, scale = 1, link, isP
         onTimeUpdate={handleTimeUpdate}
         onEnded={handleEnded}
         onError={handleAudioError}
-        preload="auto"
+        preload="none"
       />
 
       <a

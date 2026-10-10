@@ -131,6 +131,8 @@ const Connect = () => {
               <img 
                 src="/convocation.jpg" 
                 alt="Connect" 
+                loading="lazy"
+                decoding="async"
                 style={{ 
                   width: '100%', 
                   height: '100%', 

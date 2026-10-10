@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, ArrowUpRight, Layers } from 'lucide-react';
-import startupMapImg from '../assets/hyderabad-startups-map-preview.png';
+import startupMapImg from '../assets/hyderabad-startups-map-preview.webp';
 import trenzlyImg from '../assets/trenzly-preview.webp';
 import joeSeraImg from '../assets/joe-sera-preview.webp';
 import zomatoImg from '../assets/zomato-redesign-preview.webp';
@@ -167,6 +167,8 @@ const TiltCard = ({ project, index }) => {
           <img
             src={project.image}
             alt={`${project.title} preview`}
+            loading="lazy"
+            decoding="async"
             style={{
               width: '100%',
               height: 'calc(100% + 2px)',
