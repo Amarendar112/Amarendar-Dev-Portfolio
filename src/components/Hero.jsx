@@ -28,8 +28,8 @@ const ScatterCard = ({ photo, initial, index, isInView, isMobile, isSmallMobile 
   const [isDragging, setIsDragging] = useState(false);
   const [zIndex, setZIndex] = useState(initial.zIndex);
 
-  const cardWidth = isSmallMobile ? 240 : isMobile ? 260 : 220;
-  const cardHeight = isSmallMobile ? 320 : isMobile ? 350 : 300;
+  const cardWidth = isSmallMobile ? 200 : isMobile ? 220 : 220;
+  const cardHeight = isSmallMobile ? 260 : isMobile ? 285 : 300;
 
   return (
     <motion.div
@@ -140,7 +140,7 @@ const ScatteredCardsSection = () => {
         background: '#000',
         position: 'relative',
         zIndex: 5,
-        padding: isMobile ? '20px 0 24px' : '80px 0 160px',
+        padding: isMobile ? '16px 0 24px' : '80px 0 160px',
         overflow: 'hidden'
       }}
     >
@@ -148,7 +148,7 @@ const ScatteredCardsSection = () => {
         maxWidth: '1200px', margin: '0 auto',
         padding: '0 clamp(20px, 5vw, 80px)',
         display: 'flex', alignItems: 'center',
-        gap: 'clamp(40px, 6vw, 80px)', flexWrap: 'wrap',
+        gap: isMobile ? '20px' : 'clamp(40px, 6vw, 80px)', flexWrap: 'wrap',
         flexDirection: isMobile ? 'column' : 'row',
         textAlign: isMobile ? 'center' : 'left'
       }}>
@@ -157,7 +157,11 @@ const ScatteredCardsSection = () => {
           initial={{ opacity: 0, x: isMobile ? 0 : -40, y: isMobile ? 20 : 0 }}
           animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-          style={{ flex: '1 1 320px', maxWidth: isMobile ? '100%' : '500px' }}
+          style={{
+            flex: isMobile ? '0 0 auto' : '1 1 320px',
+            maxWidth: isMobile ? '100%' : '500px',
+            width: isMobile ? '100%' : 'auto'
+          }}
         >
           <p style={{
             fontFamily: "'Inter', sans-serif",
@@ -176,15 +180,15 @@ const ScatteredCardsSection = () => {
 
         {/* Right: Scattered draggable photo cards */}
         <div style={{
-          flex: '1 1 420px',
+          flex: isMobile ? '0 0 auto' : '1 1 420px',
           position: 'relative',
-          height: isSmallMobile ? '330px' : isMobile ? '360px' : '420px',
+          height: isSmallMobile ? '280px' : isMobile ? '300px' : '420px',
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           overflow: 'visible',
-          marginTop: isSmallMobile ? '20px' : isMobile ? '30px' : '0'
+          marginTop: 0
         }}>
           {/* Cards scattered around center */}
           {CARD_PHOTOS.map((photo, i) => (
